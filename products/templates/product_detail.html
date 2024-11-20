@@ -3,7 +3,6 @@
 {% block content %}
   <div class="container mt-4">
     <h3 class="display-4">Detalhes do Produto</h3>
-
     <div class="card">
       <div class="card-body">
         <h3 class="card-title">{{ object.title }}</h3>
@@ -16,11 +15,10 @@
         <p class="card-text">Preço a Prazo: <strong>R$ {{ object.selling_price }}</strong></p>
         <p class="card-text">Quantidade em Estoque: <strong>{{ object.quantity }}</strong></p>
         {% if object.photo %}
-          <img class="img-thumbnail" src="{{ object.photo.url }}">
+            <img class="img-thumbnail" style="max-width: 18rem;padding: 10px;" src="{{ object.photo.url }}">
         {% endif %}
       </div>
     </div>
-
     <a href="{% url 'product_list' %}" class="btn btn-secondary mt-3">Voltar para a Lista de Produtos</a>
   </div>
 {% endblock %}
